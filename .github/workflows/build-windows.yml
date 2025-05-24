@@ -27,6 +27,8 @@ jobs:
       run: npm install
 
     - name: Rebuild native modules
+      env:
+        CL: /std:c++20
       run: npx electron-rebuild -f -w sqlite3
 
     - name: Build Electron App (Windows)
