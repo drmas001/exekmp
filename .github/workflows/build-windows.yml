@@ -32,6 +32,8 @@ jobs:
       run: npx electron-rebuild -f -w sqlite3
 
     - name: Build Electron App (Windows)
+      env:
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
       run: npx electron-builder --win
 
     - name: Upload EXE Artifact
